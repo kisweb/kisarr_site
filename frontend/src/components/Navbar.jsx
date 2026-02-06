@@ -23,7 +23,7 @@ const Navbar = ({ user, setUser }) => {
             <Link to="/todos" className="mx-2">
               Todos
             </Link> 
-            <Link to="/clients" className="mx-2">
+            <Link to="/" className="mx-2">
               Clients
             </Link> 
             <button
