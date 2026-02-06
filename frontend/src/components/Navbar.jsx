@@ -20,16 +20,19 @@ const Navbar = ({ user, setUser }) => {
         <div>
           {user ? (
           <div>
-
+            <Link to="/todos" className="mx-2">
+              Todos
+            </Link> 
+            <Link to="/clients" className="mx-2">
+              Clients
+            </Link> 
             <button
               onClick={handleLogout}
               className="bg-red-500 px-3 py-1 rounded"
               >
               Logout
             </button>
-            <Link to="/todos" className="mx-2">
-              Todos
-            </Link>   
+              
               </div>
           ) : (
             <>
