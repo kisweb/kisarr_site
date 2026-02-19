@@ -7,6 +7,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Album from "./pages/Album";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -44,6 +45,7 @@ function App() {
       <Navbar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<Home user={user} error={error} />} />
+        <Route path="/album" element={<Album />} />
         <Route
           path="/todos"
           element={user ? <Todos /> : <Navigate to="/todos" />}

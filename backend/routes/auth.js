@@ -82,6 +82,8 @@ router.post("/login", async (req, res) => {
   res.cookie("token", token, cookieOptions);
 
   res.json({
+    status: 200,
+    token: token,
     user: {
       id: userData.id,
       name: userData.name,

@@ -31,7 +31,7 @@ router.post("/", async (req, res) => {
 router.get("/", async (req, res) => {
     try {
         const allClients = await pool.query("SELECT * FROM clients");
-        res.json(allClients.rows);
+        res.json({clients: allClients.rows});
     } catch (err) {
         console.error(err.message);
         res.status(500).send("Server Error");

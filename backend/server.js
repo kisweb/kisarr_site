@@ -29,7 +29,8 @@ app.use("/api/auth", authRoutes);
   app.use("/api/clients", clientRoutes);
 
 const PORT = process.env.PORT || 5000;
+const DB = process.env.DATABASE_URL
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT} and server start at ${DB}`);
 });
