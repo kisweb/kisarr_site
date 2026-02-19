@@ -34,7 +34,7 @@ function App() {
         try {
             setLoading(true);
             setError(null);
-            const res = await axios.get(`${API_URL}/todos`);
+            const res = await axios.get(`/todos`);
             console.log(res.data);
 
 
@@ -57,7 +57,7 @@ function App() {
         if (!description.trim()) return;
         try {
             setError(null);
-            const res = await axios.post(`${API_URL}/todos`, {
+            const res = await axios.post(`/todos`, {
                 description: description.trim(),
                 completed: false,
             });
@@ -81,7 +81,7 @@ function App() {
                 setEditedText("");
                 return;
             }
-            await axios.put(`${API_URL}/todos/${id}`, {
+            await axios.put(`/todos/${id}`, {
                 description: trimmedText,
             });
             setEditingTodo(null);
@@ -104,7 +104,7 @@ function App() {
             setError(null);
 
             if (confirm('Are you sure you want to save this thing into the database?')) {
-                await axios.delete(`${API_URL}/todos/${id}`);
+                await axios.delete(`/todos/${id}`);
                 setTodos(todos.filter((todo) => todo.id !== id));
                 console.log('The todo was deleted from the database.');
             } else {
@@ -122,7 +122,7 @@ function App() {
         try {
             setError(null);
             const todo = todos.find((todo) => todo.id === id);
-            await axios.put(`${API_URL}/todos/${id}`, {
+            await axios.put(`/todos/${id}`, {
                 description: todo.description,
                 completed: !todo.completed,
             });

@@ -14,7 +14,7 @@ const Login = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/auth/login`, form);
+      const res = await axios.post(`/auth/login`, form);
       setUser(res.data.user);
       navigate("/");
     } catch (err) {
@@ -35,14 +35,14 @@ const Login = ({ setUser }) => {
         <input
           type="email"
           placeholder="email"
-          className="border p-2 w-full mb-3"
+          className="border p-2 w-full mb-3 text-gray-800"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
         />
         <input
           type="password"
           placeholder="password"
-          className="border p-2 w-full mb-3"
+          className="border p-2 w-full mb-3 text-gray-800"
           value={form.password}
           onChange={(e) => setForm({ ...form, password: e.target.value })}
         />
